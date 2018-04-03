@@ -16,7 +16,7 @@ Is it possible to have invocations of `render()` execute in parallel?  It would 
 `SoyValueProvider` would allow for this, in that the `resolve()` method could be lazily evaluated.
 
 I've created [RenderFunction.java](/src/main/java/com/geniussportsmedia/spikes/soyasync/RenderFunction.java) file 
-to emulate an expensive operation:
+to emulate an expensive operation:2
 
 ```java
 public SoyValue computeForJava(final List<SoyValue> list) {
@@ -39,6 +39,8 @@ private CompletableFuture<String> getFuture(final String url) {
     }, executor);
 }
 ```
+
+*see: [SoyProviderFacadeValue](/src/main/java/com/geniussportsmedia/spikes/soyasync/SoyProviderFacadeValue.java)*
 
 Running the template above yields the following output:
 
