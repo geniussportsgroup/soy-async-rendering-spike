@@ -1,3 +1,5 @@
+## spike report:
+
 Given a `render(url)` function that is expensive, and the following template:
 
 ```soy
