@@ -1,0 +1,20 @@
+{namespace foo}
+
+{template .MyTemplate}
+    {let $a: render('/feed/A.json') /}
+    {let $b: render('/feed/B.json') /}
+    {let $c: render('/feed/C.json') /}
+    {$b}{$a}{$c}
+{/template}
+
+
+{template .MyTemplate2}
+    {let $data: [
+      'd': render('/feed/C.json'),
+      'e': render('/feed/E.json'),
+      'f': render('/feed/F.json')
+    ] /}
+    {$data.d}
+    {$data.e}
+    {$data.f}
+{/template}
